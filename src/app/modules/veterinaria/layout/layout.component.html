@@ -1,0 +1,44 @@
+<!-- <header class="header-layout">
+    <app-header></app-header>
+</header>
+
+<main class="main-layout">
+    <section class="section-layout">
+        <article class="article-layout">
+            <router-outlet></router-outlet>            
+        </article>
+        <aside class="aside-layout">
+
+        </aside>
+    </section>
+
+</main>
+
+<footer class="footer-layout">
+    <app-footer></app-footer>
+</footer> -->
+
+<div class="main-layout">
+    <header class="header-layout">
+        <app-header></app-header>
+    </header>
+
+    <article class="article-layout">
+            <mat-sidenav-container class="sidenav-container">
+                <mat-sidenav #drawer [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="!(isHandset$ | async)">
+                    <app-menu [role]="role"></app-menu>
+                    <button mat-button color="warn" (click)="logout()">
+                        Cerrar Sesión
+                    </button>
+                </mat-sidenav>
+
+                <mat-sidenav-content class="pages-container">
+                    <router-outlet></router-outlet>
+                </mat-sidenav-content>
+            </mat-sidenav-container>
+    </article>
+
+    <footer class="footer-layout">
+        <app-footer></app-footer>
+    </footer>
+</div>

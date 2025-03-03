@@ -1,0 +1,43 @@
+
+<h1 mat-dialog-title>Registro</h1>
+
+<div mat-dialog-content class="dialog-content">
+  <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Usuario</mat-label>
+      <input type="text" matInput formControlName="name" placeholder="Nombre de usuario">
+      <mat-error *ngIf="registerForm.get('name')?.hasError('required')">
+        El usuario es obligatorio
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email" placeholder="Email">
+      <mat-error *ngIf="registerForm.get('email')?.hasError('required')">
+        El email es obligatorio
+      </mat-error>
+      <mat-error *ngIf="registerForm.get('email')?.hasError('email')">
+        Email inválido
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password" placeholder="Password">
+      <mat-error *ngIf="registerForm.get('password')?.hasError('required')">
+        La contraseña es obligatoria
+      </mat-error>
+    </mat-form-field>
+
+    <div class="button-container">
+      <button mat-raised-button color="primary" type="submit" [disabled]="registerForm.invalid">
+        <mat-icon>save</mat-icon>
+        Crear Cuenta
+      </button>
+      <button mat-button color="warn" type="button" (click)="onCancel()">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

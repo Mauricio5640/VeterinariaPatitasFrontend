@@ -1,0 +1,14 @@
+<mat-nav-list>
+    <a mat-list-item routerLink="">
+        <div class="icon"><mat-icon>home</mat-icon><span>Home</span></div>        
+    </a>
+    <a mat-list-item routerLink="citas" *ngIf="role === 'USER' || role === 'ADMIN'">
+        <div class="icon"><mat-icon>add</mat-icon><span>Citas</span></div>
+    </a>
+    <a mat-list-item routerLink="/veterinaria/empleados" *ngIf="role === 'ADMIN'">
+        <div class="icon">
+            <mat-icon>group</mat-icon>
+            <span>Gestionar Empleados</span>
+        </div>
+    </a>
+</mat-nav-list>

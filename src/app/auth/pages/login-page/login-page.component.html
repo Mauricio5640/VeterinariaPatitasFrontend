@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>Iniciar Sesión</h1>
+
+<div mat-dialog-content class="dialog-content">
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email" placeholder="Email">
+      <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+        El email es obligatorio
+      </mat-error>
+      <mat-error *ngIf="loginForm.get('email')?.hasError('email')">
+        Email inválido
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Contraseña</mat-label>
+      <input type="password" matInput formControlName="password" placeholder="Contraseña">
+      <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+        La contraseña es obligatoria
+      </mat-error>
+    </mat-form-field>
+
+    <div class="button-container">
+      <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">
+        <mat-icon>login</mat-icon>
+        Ingresar
+      </button>
+
+      <button mat-button color="warn" type="button" (click)="onCancel()">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

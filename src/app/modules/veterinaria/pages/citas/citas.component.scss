@@ -1,0 +1,24 @@
+.citas-container {
+    padding: 16px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+table {
+    width: 100%;
+}
+
+.custom-dialog-container .mat-dialog-container {
+    overflow: visible !important;
+}
+
+.div-error{
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: xx-large;
+}

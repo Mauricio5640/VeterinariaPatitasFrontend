@@ -1,0 +1,33 @@
+<div class="welcome-container">
+    <div class="welcome-header">
+        <h1>Bienvenido a Veterinaria Patitas</h1>
+        <p>Descubre nuestros servicios y cuida a tus mascotas con nosotros.</p>
+
+        <div class="buttons">
+            <button mat-raised-button color="primary" (click)="openLoginDialog()">
+                Iniciar Sesión
+              </button>
+              <button mat-raised-button color="accent" (click)="openRegisterDialog()">
+                Registrarse
+              </button>
+        </div>
+    </div>
+    <div class="card-slider-container">
+        <div class="card-slider" [ngStyle]="{ 'transform': 'translateX(calc(-' + currentIndex * 74 + '% + 10%))' }">
+            <div class="slider-card" *ngFor="let card of cards">
+                <img [src]="card.image" alt="{{ card.title }}" />
+                <div class="card-info">
+                    <h2>{{ card.title }}</h2>
+                    <p>{{ card.description }}</p>
+                </div>
+            </div>
+        </div>
+
+        <button mat-icon-button class="slider-btn prev" (click)="prevSlide()">
+            <mat-icon>chevron_left</mat-icon>
+        </button>
+        <button mat-icon-button class="slider-btn next" (click)="nextSlide()">
+            <mat-icon>chevron_right</mat-icon>
+        </button>
+    </div>
+</div>

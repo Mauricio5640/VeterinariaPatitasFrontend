@@ -1,0 +1,58 @@
+<h2 mat-dialog-title>{{title}}</h2>
+<mat-dialog-content>
+    <form [formGroup]="citaForm">
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Dueño</mat-label>
+            <input matInput formControlName="nombreCliente">
+            <mat-error *ngIf="citaForm.get('nombreCliente')?.hasError('required')">El dueño es obligatorio</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Mascota</mat-label>
+            <input matInput formControlName="nombreMascota">
+            <mat-error *ngIf="citaForm.get('nombreMascota')?.hasError('required')">La mascota es obligatoria</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Especie</mat-label>
+            <input matInput formControlName="especie">
+            <mat-error *ngIf="citaForm.get('especie')?.hasError('required')">
+                La especie es obligatoria
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Razón de la Cita</mat-label>
+            <textarea matInput formControlName="razonCita" rows="3"></textarea>
+            <mat-hint align="end">
+                {{ citaForm.get('razonCita')?.value?.length || 0 }} / 100
+            </mat-hint>
+            <mat-error *ngIf="citaForm.get('razonCita')?.hasError('required')">
+                La razón es obligatoria
+            </mat-error>
+            <mat-error *ngIf="citaForm.get('razonCita')?.hasError('maxlength')">
+                Máximo 100 caracteres
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Fecha de Cita</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="fechaCita" [min]="minDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="citaForm.get('fechaCita')?.hasError('required')">
+                La fecha es obligatoria
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+            <mat-label>Hora de Cita</mat-label>
+            <input matInput type="time" formControlName="horaCita" min="09:00" max="18:00">
+            <mat-error *ngIf="citaForm.get('horaCita')?.hasError('required')">
+                La hora es obligatoria
+            </mat-error>
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button (click)="onCancel()">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="!citaForm.valid">Guardar</button>
+</mat-dialog-actions>

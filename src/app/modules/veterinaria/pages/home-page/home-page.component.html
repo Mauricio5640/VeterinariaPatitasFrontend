@@ -1,0 +1,61 @@
+
+<div class="home-section">
+    <div class="home-content">
+      <h1>Bienvenido a Veterinaria Patitas</h1>
+      <p>Cuidamos a tus mascotas con dedicación y cariño.</p>
+      <a href=""></a>
+      <button mat-raised-button color="primary" [routerLink]="['/veterinaria/citas']">
+        ¡Agenda tu cita ahora!
+      </button>
+    </div>
+  </div>
+  
+  <div class="carousel-container">
+    <div
+      class="carousel-slide"
+      [ngStyle]="{ 'transform': 'translateX(-' + currentIndex * 100 + '%)' }"
+    >
+      <div class="carousel-item" *ngFor="let image of images">
+        <img [src]="image" alt="Imagen de mascota" />
+      </div>
+    </div>
+    <button mat-icon-button class="carousel-btn prev" (click)="prevSlide()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <button mat-icon-button class="carousel-btn next" (click)="nextSlide()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+  
+  <div class="services-section">
+    <h2>Nuestros Servicios</h2>
+    <div class="services-cards">
+      <mat-card class="service-card">
+        <mat-card-header>
+          <mat-card-title>Consultas Generales</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Atendemos a tu mascota para chequeos de rutina y emergencias.</p>
+        </mat-card-content>
+      </mat-card>
+  
+      <mat-card class="service-card">
+        <mat-card-header>
+          <mat-card-title>Vacunación</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Mantenemos al día el calendario de vacunas para prevenir enfermedades.</p>
+        </mat-card-content>
+      </mat-card>
+  
+      <mat-card class="service-card">
+        <mat-card-header>
+          <mat-card-title>Cirugías</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Contamos con equipo especializado para cirugías de alta complejidad.</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  

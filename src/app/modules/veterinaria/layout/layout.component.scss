@@ -1,0 +1,25 @@
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .header-layout {    
+  }
+  
+  .article-layout {
+    flex: 1;
+  }
+  
+  .section-layout {    
+  }
+  
+  .sidenav-container {    
+    min-height: 80vh; 
+    margin: 1rem;
+    background-color: #fafafa;
+  }
+  .footer-layout {
+    
+  }
+  
