@@ -1,10 +1,41 @@
-# VeterinariaApp
+# VeterinariaPatitasFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+Este proyecto consiste en una aplicación web para una veterinaria llamada **Patitas**, que permite:
+- **Gestionar citas** para mascotas (registro, consulta y actualización).
+- **Autenticación** (registro e inicio de sesión).
 
-## Development server
+## Características
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Registro** e **inicio de sesión** que persisten en el _Local Storage_.
+- **Agendado de citas** para mascotas con campos como dueño, mascota, fecha, hora y descripción (se conectan a un backend hecho en springboot).
+
+## Usuarios de Prueba
+
+La aplicación ya cuenta con **dos usuarios embebidos** para que puedas iniciar sesión de inmediato:
+
+1. **Email**: `mau@mail.com`  
+   **Contraseña**: `123`
+
+2. **Email**: `orlando@mail.com`  
+   **Contraseña**: `123`
+
+Si lo prefieres, puedes **registrar** nuevos usuarios directamente en la aplicación. El registro funciona totalmente y también se almacena en el _Local Storage_.
+
+## Requisitos Previos
+
+- **Node.js** (versión 14 o superior)
+- **Angular CLI** (versión 16 o superior)
+
+Asegúrate de contar con estas herramientas instaladas antes de ejecutar el proyecto.
+
+## Cómo Ejecutar
+
+1. **Clonar** este repositorio:
+   ```bash
+   git clone https://github.com/tu-usuario/VeterinariaPatitasFrontend.git
+
+ 2. **Descargar dependencias**: 
+ **npm install
 
 ## Code scaffolding
 
